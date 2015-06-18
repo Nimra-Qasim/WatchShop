@@ -1,0 +1,43 @@
+﻿@model List<Watch_Shop.Models.Watch>
+
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Rado</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!---start-wrap--->
+    <div class="wrap">
+        <!---start-header--->
+     
+        <div class="content">
+            <div class="products-box">
+                <div class="products">
+                    @*<h5><span>Rado</span></h5>*@
+                    <div class="section group">
+                        @foreach(var i in Model)
+                        {
+                        <div class="grid_1_of_5 images_1_of_5">
+                            <img src=@i.Image>
+                            <h3>Model: @i.Model</h3>
+                            <h4>$@i.Price</h4>
+                            
+                            <div class="button"><span><a href="/Home/Buy/?id=@i.Id">Buy</a></span></div>
+                        </div>
+                        }
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+    <div class="clear"> </div>
+    <!---End-wrap--->
+</body>
+</html>

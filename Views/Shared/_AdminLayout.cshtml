@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/js")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/css/responsiveslides.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script>
+        // You can also use
+        "$(window).load(function() {"
+
+        //  $(function () {
+
+        // Slideshow 1
+        $("#slider1").responsiveSlides({
+            maxwidth: 1600,
+            speed: 300
+        });
+      
+    </script>
+    
+</head>
+<body>
+
+    <div class="wrap">
+    <div class="header">
+        <!---start-top-header--->
+
+        <div class="sub-header">
+            <div class="logo">
+                <a href="#"><img src="~/Content/images/admin.png" title="logo" /></a>
+            </div>
+            <div class="sub-header-center">
+
+            </div>
+
+        </div>
+
+        <div class="clear"> </div>
+
+
+            <div class="sub-header-right">
+                <ul>
+                    <li><a href="/Admin/Index/">@Session["Aname"]</a></li>
+                    <li><a href="/Account/Logout/">log Out</a></li>                  
+                </ul>
+            </div>
+        
+        <div class="top-nav">
+            <ul>
+               @*<li>@Session["name"]</li>*@
+                <li><a href="/Admin/ViewWatches">View Watch</a></li>
+                <li><a href="/Admin/Add/">Add Watch</a></li>
+                <li><a href="/Admin/Delete/">Delete Watch</a></li>
+                <li><a href="/Admin/ViewUser/">View User</a></li>
+                <li><a href="/Admin/AddBrand/">Add Brand</a></li>
+                <li><a href="/Admin/ViewMessage/">Inbox</a></li>
+                <li><a href="/Admin/ViewOrder/">View Order</a></li>
+                 @*<li>
+                    <select>
+                        <option>Dollar</option>
+                        <option>Euro</option>
+                        <option>Pound</option>
+                    </select>
+                </li>*@
+              
+               
+            </ul>
+
+             <div class="clear"> </div>
+                    
+                </div>
+
+      </div>         
+</div>
+ 
+     @RenderBody()
+
+    <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_3 span_1_of_3 footer-lastgrid">
+                    <h3>Get in touch</h3>
+                    <ul>
+                        <li><a href="#"><img src="~/Content/images/facebook.png" title="facebook" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/twitter.png" title="Twiiter" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/rss.png" title="Rss" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/gpluse.png" title="Google+" /></a></li>
+                    </ul>
+                    <div class="footer">
+                        <p>Design by <a href="/Home/">BITF12M537</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+ 
+</body>
+</html>

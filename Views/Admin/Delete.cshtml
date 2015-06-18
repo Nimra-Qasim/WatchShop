@@ -1,0 +1,39 @@
+﻿@model List<Watch_Shop.Models.Watch>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delete Watch</title>
+</head>
+<body>
+    <div class="content">
+        <div class="products-box">
+                      <div class="products">
+                            @*<h5><span>@i.Catagory</span></h5>*@
+                                <div class="section group">
+                            @foreach (var i in Model)
+                            {
+                                <div class="grid_1_of_5 images_1_of_5">
+                                    <img src=@i.Image>
+                                    <h3>Model: @i.Model</h3>
+                                    <h4>Catagory: @i.Catagory</h4>
+                                    <h4>$@i.Price</h4>
+                                    
+                                    <div class="button"><span><a href="/Admin/DeleteWatch/?id=@i.Id">Delete</a></span></div>
+
+                                </div>
+                            }
+
+                             </div>
+                       </div>
+        </div>
+     </div>
+
+            <div class="clear"> </div>
+ </body>
+</html>

@@ -1,0 +1,83 @@
+﻿@model Watch_Shop.Models.Message
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ContactUs</title>
+
+</head>
+<body>
+           
+            <!---header--->
+
+        <div class="content">
+            <div class="contact">
+                <div class="section group">
+                    <div class="col span_1_of_3">
+                        <div class="contact_info">
+                            <h3>Find Us Here</h3>
+                            <div class="map">
+                                <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+                            </div>
+                        </div>
+                        <div class="company_address">
+                            <h3>Company Information :</h3>
+                            
+                            <p>Lahore, PAKISTAN</p>
+                            <p>Phone:0300-1234567</p>
+                            <p>Fax: (000) 000 00 00 0</p>
+                            <p>Email: <span>nimra.qasim94@gmail.com</span></p>
+                            
+                        </div>
+                    </div>
+                    <div class="col span_2_of_3">
+                        <div class="contact-form">
+                            <h3>Contact Us</h3>
+
+                    @using (Html.BeginForm("Messages", "Home", FormMethod.Post))
+                            {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        
+                             <div>
+                                @Html.Label("NAME")
+                                @Html.TextBoxFor(m => m.Name, new { placeholder = "Enter Name" })
+                                @Html.ValidationMessageFor(model => model.Name)
+
+                            </div>
+                        
+                          <div>
+                                @Html.Label("EMAIL")
+                                @Html.TextBoxFor(m => m.Email, new { placeholder = "Enter Email" })
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        
+                         <div>
+                                @Html.Label("MOBILE #")
+                                @Html.TextBoxFor(m => m.Number, new { placeholder = "Enter Mobile Number" })
+                                @Html.ValidationMessageFor(model => model.Number)
+                            </div>
+                        
+                         <div>
+                                @Html.Label("Message")
+                                @Html.TextAreaFor(m =>m.Message1 )
+                                @Html.ValidationMessageFor(model => model.Message1)
+                            </div>
+                        
+                                <div>
+                                    <span><input type="submit" value="Send"></span>
+                                </div>
+                    }
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"> </div>
+ 
+</body>
+</html>

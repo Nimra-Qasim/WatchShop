@@ -1,0 +1,71 @@
+﻿@model Watch_Shop.Models.Watch
+
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+
+    <!---header--->
+
+    <div class="content">
+        <div class="contact">
+            <div class="section group">
+                <div class="col span_1_of_3">
+
+                    <img src=@Model.Image>
+
+                </div>
+                <form action="/Account/Cart" method="post">
+                    <div class="col span_3_of_3">
+                        <div class="contact-form">
+                            <div>
+                                <div>
+                                    <span><label><input name="id" type="hidden" value=@Model.Id /></label></span>
+
+                                </div>
+                                <div>
+                                    <span><input name="Catagory" type="hidden" value=@Model.Catagory /><label>Brand: @Model.Catagory</label></span>
+
+                                </div>
+                                <span></span>
+
+                                <div>
+                                    <span><input name="Model" type="hidden" value=@Model.Model /><label>Model: @Model.Model</label></span>
+
+                                </div>
+                                <span></span>
+                                <div>
+                                    <span><input name="Price" type="hidden" value=@Model.Price /><label>Price: @Model.Price</label></span>
+
+                                </div>
+                                <span></span>
+
+
+                                <div>
+                                    <span><label>Quantity(1-5): </label></span><input name="Quantity" required="required" type="number" max="5" min="1" class="contact" value="0" />
+                                </div>
+                                <span></span>
+
+                                <div>
+                                    <span><input type="submit" value="Done"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form></div>
+        </div>
+    </div>
+    
+    <div class="clear"> </div>
+
+</body>
+</html>

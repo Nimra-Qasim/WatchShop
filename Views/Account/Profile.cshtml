@@ -1,0 +1,77 @@
+﻿@model Watch_Shop.Models.Account
+
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+    <!---start-wrap--->
+
+    <div class="content">
+        <div class="contact">
+            <div class="section group">
+
+                <div class="products-box">
+                    <div class="products">
+                        <h5>PROFILE</h5>
+                        @*<form method="post">*@
+
+                            <div class="col span_1_of_3">
+                                <div>
+                                    <div>
+                                        <span><img src=@Model.Image height="400" width="300" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col span_3_of_3">
+                                <div class="contact-form">
+                                    <div>
+
+                                        <div>
+                                            <div>
+                                                <span><label>Name: @Model.FirstName @Model.LastName</label></span>
+
+                                            </div>
+                                            <span></span>
+                                            <div>
+                                                <span><label>Email: @Model.Email</label></span>
+                                            </div>
+                                            <span></span>
+                                            <div>
+                                                <span><label>Password: @Model.Password</label></span>
+                                            </div>
+                                            <span></span>
+                                            <div>
+                                                <span><label>Gender: @Model.Gender</label></span>
+                                            </div>
+                                            <span></span>
+
+                                            <div class="button"><span><a href="/Account/Edit?id=@Model.Id">Edit</a></span></div>
+
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        @*</form>*@                @*<div class="col span_2_of_4">
+                        <div class="contact-form">
+
+                        </div>
+                    </div>*@
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="clear"> </div>
+
+
+</body>
+</html>

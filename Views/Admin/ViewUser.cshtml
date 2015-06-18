@@ -1,0 +1,44 @@
+﻿@model List<Watch_Shop.Models.Account>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View User</title>
+</head>
+<body>
+    <!---start-wrap--->
+
+    <div class="content">
+        <div class="products-box">
+            <div class="products">
+                <h5><span>USERS</span></h5>
+                <div class="section group">
+                    @foreach (var i in Model)
+                    {
+                        <div class="grid_1_of_5 images_1_of_5">
+                            <img width="200" height="200" src=@i.Image>
+                            <h3>Name: @i.FirstName @i.LastName</h3>
+                            <h4>Email: @i.Email</h4>
+                            <h3>Gender: @i.Gender</h3>
+
+                            <div class="button"><span><a href="/Admin/DeleteUser/?id=@i.Id">Delete</a></span></div>
+
+                        </div>
+                    }
+                    <div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="clear"> </div>
+</body>
+</html>

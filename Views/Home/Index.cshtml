@@ -1,0 +1,65 @@
+﻿@model List<Watch_Shop.Models.Catagory>
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+ 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                maxwidth: 1600,
+                speed: 600
+            });
+        });
+    </script>
+</head>
+<body>
+    <!---start-wrap--->
+    <div class="wrap">
+        <!---start-header--->
+        <div class="image-slider">
+            <!-- Slideshow 1 -->
+            <ul class="rslides" id="slider1">
+                <li><img src="~/Content/images/wc4.jpg" alt=""></li>
+                <li><img src="~/Content/images/wc5.jpg" alt=""></li>
+                <li><img src="~/Content/images/wc3.jpg" alt=""></li>
+                <li><img src="~/Content/images/wc2.jpg" alt=""></li>
+                <li><img src="~/Content/images/wc1.jpg" alt=""></li>
+                <li><img src="~/Content/images/wc6.jpg" alt=""></li>
+            </ul>
+            <!-- Slideshow 2 -->
+        </div>
+        <!--End-image-slider---->
+
+        <div class="content">
+            <div class="products-box">
+                <div class="products">
+                    <h5><span>FEATURED</span> PRODUCTS</h5>
+                    <div class="section group">
+                        @foreach(var i in Model)
+                        {
+                            <div class="grid_1_of_5 images_1_of_5">
+                                <img width="200" height="200"  src=@i.Image>
+                      
+                                <div class="button"><span><a href="/Home/singlePage/?brand=@i.Brand">@i.Brand</a></span></div>
+
+                            </div>
+                        }
+                            </div>
+
+                        </div>
+                    <div class="clear"> </div>
+                </div>
+               
+            </div>
+        </div>
+  
+</body>
+</html>

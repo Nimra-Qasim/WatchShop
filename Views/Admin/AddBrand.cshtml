@@ -1,0 +1,64 @@
+﻿@model Watch_Shop.Models.Catagory
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Brand</title>
+
+</head>
+<body>
+
+    <!---header--->
+    </div>
+    <div class="content">
+        <div class="contact">
+            <div class="section group">
+                <div class="col span_1_of_3">
+
+
+                </div>
+                <div class="col span_2_of_3">
+                    <div class="contact-form">
+                        <h3>Add Watches</h3>
+                        @using (Html.BeginForm("AddBrands", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div>
+                                @Html.Label("Name")
+                                @Html.TextBoxFor(m => m.Name, new { placeholder = "Enter name", required = "required" })
+
+
+                            </div>
+                            <div>
+                                @Html.Label("Brand")
+                                <span></span>
+                                @Html.TextBoxFor(m => m.Brand, new { required = "required", placeholder = "Enter Brand" })
+                            </div>
+                            <div>
+                                @Html.Label("Image")
+                                <span></span>
+                                @Html.TextBoxFor(m => m.Image, new { type = "File" })
+                            </div>
+
+                            <div>
+
+                            </div>
+
+
+                            <div>
+                                <span><input type="submit" value="Submit"></span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="clear"> </div>
+
+</body>
+</html>
+

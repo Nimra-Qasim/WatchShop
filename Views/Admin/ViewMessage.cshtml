@@ -1,0 +1,50 @@
+﻿@model List<Watch_Shop.Models.Message>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View User</title>
+</head>
+<body>
+    <!---start-wrap--->
+
+    <div class="content">
+        <div class="products-box">
+            <div class="products">
+                <h5><span>Messages</span></h5>
+                <div class="section group">
+                    @foreach (var i in Model)
+                    {
+                        <div class="grid_1_of_5 ">
+                            
+                            <h3>Name: @i.Name</h3>
+                            <h4>Email: @i.Email</h4>
+                            <h3>Message: @i.Message1</h3>
+
+                            <div class="button"><span><a href="/Admin/DeleteMessage/?id=@i.Id">Delete</a></span></div>
+
+                        </div>
+                    }
+                    <div>
+                        @*<table border="1">
+                                @foreach (var i in Model)
+                                {
+                                    <tr>><td>@i.FirstName @i.LastName</td><td>@i.Email</td><td> @i.Gender</td><td>@Html.ActionLink("Delete", "DeleteUser", "Admin", new { id = i.Id })</td></tr>
+                                }
+                            </table>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="clear"> </div>
+</body>
+</html>

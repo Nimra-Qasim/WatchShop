@@ -1,12 +1,13 @@
-﻿@{
+﻿@model List<Watch_Shop.Models.Catagory>
+@{
     Layout = "~/Views/Shared/_CommonLayout.cshtml";
 }
- 
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Home</title>
+    <title>Home</title>
     <script>
         // You can also use "$(window).load(function() {"
         $(function () {
@@ -37,7 +38,28 @@
         </div>
         <!--End-image-slider---->
 
+        <div class="content">
+            <div class="products-box">
+                <div class="products">
+                    <h5><span>FEATURED</span> PRODUCTS</h5>
+                    <div class="section group">
+                        @foreach (var i in Model)
+                        {
+                            <div class="grid_1_of_5 images_1_of_5">
+                                <img width="200" height="200" src=@i.Image>
+
+                                <div class="button"><span><a href="/Home/singlePage/?brand=@i.Brand">@i.Brand</a></span></div>
+
+                            </div>
+                        }
+                    </div>
+
+                </div>
+                <div class="clear"> </div>
+            </div>
+
         </div>
-  
+    </div>
+
 </body>
 </html>

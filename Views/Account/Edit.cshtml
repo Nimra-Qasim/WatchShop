@@ -19,13 +19,15 @@
                 <div class="products-box">
                     <div class="products">
                         <h5>PROFILE</h5>
-                        <form action="/Account/EditProfile" method="post">
-
+                        @Html.BeginForm("EditProfile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }) 
+                        {
+                         
                             <div class="col span_1_of_3">
                                 <div>
                                     <div>
                                         <span><img src=@Model.Image height="400" width="300" /></span>
                                     </div>
+                                    <div> Upload Image: <input type="file" name="Image" /></div>
                                  </div>
                             </div>
                             <div class="col span_3_of_3">
@@ -62,30 +64,22 @@
                                             <div>
                                                 <input type="hidden" name="Username" value=@Model.Username />
                                             </div>
-                                            <div>
-                                                <input type="hidden" name="Image" value=@Model.Image />
-                                            </div>
+                                            
                                             <span></span>
                                             <div>
-                                                <span><input type="submit" value="Done"></span>
+                                                <span><input type="submit" value="Save"></span>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                        </form>                @*<div class="col span_2_of_4">
-                                <div class="contact-form">
-
-                                </div>
-                            </div>*@
+                      }             
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="clear"> </div>
-
 
 </body>
 </html>
